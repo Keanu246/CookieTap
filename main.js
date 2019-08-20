@@ -9,7 +9,7 @@ class Clicker
 	constructor()
 	{
 		this.level = 1
-		this.price = 12;
+		this.price = 115;
 
 		this.level_display = document.getElementById("clicker_level");
 		this.price_display = document.getElementById("clicker_price");
