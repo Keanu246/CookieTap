@@ -182,6 +182,30 @@ function renew_cookies()
 		shipment.set_visible(); 
 		shipment_enabled = 1;
 	}
+	
+	if(this.cookies_produced >= 80000 && alchemy_lab_enabled == 0) 
+	{
+		alchemy_lab.set_visible(); 
+		alchemy_lab_enabled = 1;
+	}
+	
+	if(this.cookies_produced >= 1600000 && portal_enabled == 0) 
+	{
+		portal.set_visible(); 
+		portal_enabled = 1;
+	}
+	
+	if(this.cookies_produced >= 48000000 && time_machine_enabled == 0) 
+	{
+		time_machine.set_visible(); 
+		time_machine_enabled = 1;
+	}
+	
+	if(this.cookies_produced >= 720000000 && antimatter_condenser_enabled == 0) 
+	{
+		antimatter_condenser.set_visible(); 
+		antimatter_condenser_enabled = 1;
+	}
 }
 
 // commands and (global) variables
@@ -200,6 +224,10 @@ farm_enabled = 0;
 factory_enabled = 0;
 mine_enabled = 0;
 shipment_enabled = 0;
+alchemy_lab_enabled = 0;
+portal_enabled = 0;
+time_machine_enabled = 0;
+antimatter_condenser_enabled = 0;
 
 clicker = new Clicker();
 cursor = new Building("Cursor", 0.1, 15);
@@ -209,5 +237,9 @@ farm = new Building("Farm", 8, 1500);
 factory = new Building("Factory", 60, 25000);
 mine = new Building("Mine", 500, 400000);
 shipment = new Building("Shipment", 4000, 5000000);
+alchemy_lab = new Building("Alchemy Lab", 80000, 75000000);
+portal = new Building("Portal", 1600000, 1000000000);
+time_machine = new Building("Time Machine", 48000000, 30000000000);
+antimatter_condenser = new Building("Antimatter Condenser", 720000000, 500000000000);
 
 setInterval(renew_cookies, 500);
