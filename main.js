@@ -154,54 +154,54 @@ function renew_cookies()
 	cookies_display.innerHTML = cookies;
 	cookies_produced_display.innerHTML = cookies_produced;
     
-	if(this.cookies_produced >= 1 && grandma_enabled == 0) 
+	if(this.cookies_produced >= 10 && grandma_enabled == 0) 
 	{
 	        grandma.set_visible();
 		grandma_enabled = 1;
         
 	}
-	if(this.cookies_produced >= 8 && farm_enabled == 0)
+	if(this.cookies_produced >= 80 && farm_enabled == 0)
 	{
 		farm.set_visible(); 
 		farm_enabled = 1;
 	}
-	if(this.cookies_produced >= 60 && factory_enabled == 0)
+	if(this.cookies_produced >= 600 && factory_enabled == 0)
 	{
 		factory.set_visible();
 		factory_enabled = 1;
 	}
 
-	if(this.cookies_produced >= 500 && mine_enabled == 0) 
+	if(this.cookies_produced >= 5000 && mine_enabled == 0) 
 	{
 		mine.set_visible(); 
 		mine_enabled = 1;
 	}
 	
-	if(this.cookies_produced >= 4000 && shipment_enabled == 0) 
+	if(this.cookies_produced >= 40000 && shipment_enabled == 0) 
 	{
 		shipment.set_visible(); 
 		shipment_enabled = 1;
 	}
 	
-	if(this.cookies_produced >= 80000 && alchemy_lab_enabled == 0) 
+	if(this.cookies_produced >= 800000 && alchemy_lab_enabled == 0) 
 	{
 		alchemy_lab.set_visible(); 
 		alchemy_lab_enabled = 1;
 	}
 	
-	if(this.cookies_produced >= 1600000 && portal_enabled == 0) 
+	if(this.cookies_produced >= 16000000 && portal_enabled == 0) 
 	{
 		portal.set_visible(); 
 		portal_enabled = 1;
 	}
 	
-	if(this.cookies_produced >= 48000000 && time_machine_enabled == 0) 
+	if(this.cookies_produced >= 480000000 && time_machine_enabled == 0) 
 	{
 		time_machine.set_visible(); 
 		time_machine_enabled = 1;
 	}
 	
-	if(this.cookies_produced >= 720000000 && antimatter_condenser_enabled == 0) 
+	if(this.cookies_produced >= 7200000000 && antimatter_condenser_enabled == 0) 
 	{
 		antimatter_condenser.set_visible(); 
 		antimatter_condenser_enabled = 1;
@@ -230,16 +230,16 @@ time_machine_enabled = 0;
 antimatter_condenser_enabled = 0;
 
 clicker = new Clicker();
-cursor = new Building("Cursor", 0.1, 15);
+cursor = new Building("Cursor", 1, 15);
 cursor.set_visible();
-grandma = new Building("Grandma", 1, 100);
-farm = new Building("Farm", 8, 1500);
-factory = new Building("Factory", 60, 25000);
-mine = new Building("Mine", 500, 400000);
-shipment = new Building("Shipment", 4000, 5000000);
-alchemy_lab = new Building("Alchemy Lab", 80000, 75000000);
-portal = new Building("Portal", 1600000, 1000000000);
-time_machine = new Building("Time Machine", 48000000, 30000000000);
-antimatter_condenser = new Building("Antimatter Condenser", 720000000, 500000000000);
+grandma = new Building("Grandma", 10, 100);
+farm = new Building("Farm", 80, 1500);
+factory = new Building("Factory", 600, 25000);
+mine = new Building("Mine", 5000, 400000);
+shipment = new Building("Shipment", 40000, 5000000);
+alchemy_lab = new Building("Alchemy Lab", 800000, 75000000);
+portal = new Building("Portal", 16000000, 1000000000);
+time_machine = new Building("Time Machine", 480000000, 30000000000);
+antimatter_condenser = new Building("Antimatter Condenser", 7200000000, 500000000000);
 
 setInterval(renew_cookies, 500);
