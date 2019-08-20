@@ -36,7 +36,7 @@ class Clicker
 		{
 			cookies -= this.price;
 			this.level += 1;
-			this.price *= 10;
+			this.price *= 1.5;
 			this.renew_display();
 		}
 		else
@@ -102,7 +102,7 @@ class Building
 	
 	get_price() 
 	{
-		return (this.price / 2) * (this.level * this.level + 1) + (this.price / 2) * (this.level + 1)
+		return (this.price / 1.25) * (this.level * this.level + 1) + (this.price / 1.25) * (this.level + 1)
 	}
 	
 	improve()
