@@ -9,7 +9,7 @@ class Clicker
 	constructor()
 	{
 		this.level = 1
-		this.price = 20;
+		this.price = 12;
 
 		this.level_display = document.getElementById("clicker_level");
 		this.price_display = document.getElementById("clicker_price");
@@ -36,7 +36,7 @@ class Clicker
 		{
 			cookies -= this.price;
 			this.level += 1;
-			this.price *= 2;
+			this.price *= 1.15;
 			this.renew_display();
 		}
 		else
@@ -102,7 +102,7 @@ class Building
 	
 	get_price() 
 	{
-		return (this.price / 2) * (this.level * this.level + 1) + (this.price / 2) * (this.level + 1)
+		return (this.price / 1.15) * (this.level * this.level + 1) + (this.price / 1.15) * (this.level + 1)
 	}
 	
 	improve()
@@ -154,27 +154,33 @@ function renew_cookies()
 	cookies_display.innerHTML = cookies;
 	cookies_produced_display.innerHTML = cookies_produced;
     
-	if(this.cookies_produced >= 200 && bakery_enabled == 0) 
+	if(this.cookies_produced >= 1 && grandma_enabled == 0) 
 	{
-		bakery.set_visible();
-		bakery_enabled = 1;
+	        grandma.set_visible();
+		grandma_enabled = 1;
         
 	}
-	if(this.cookies_produced >= 2000 && factory_enabled == 0)
+	if(this.cookies_produced >= 8 && farm_enabled == 0)
 	{
-		factory.set_visible(); 
+		farm.set_visible(); 
+		farm_enabled = 1;
+	}
+	if(this.cookies_produced >= 60 && factory_enabled == 0)
+	{
+		factory.set_visible();
 		factory_enabled = 1;
 	}
-	if(this.cookies_produced >= 20000 && cookie_tesla_enabled == 0)
-	{
-		cookie_tesla.set_visible();
-		cookie_tesla_enabled = 1;
-	}
 
-	if(this.cookies_produced >= 200000 && cookie_gigant_enabled == 0) 
+	if(this.cookies_produced >= 500 && mine_enabled == 0) 
 	{
-		cookie_gigant.set_visible(); 
-		cookie_gigant_enabled = 1;
+		mine.set_visible(); 
+		mine_enabled = 1;
+	}
+	
+	if(this.cookies_produced >= 4000 && shipment_enabled == 0) 
+	{
+		shipment.set_visible(); 
+		shipment_enabled = 1;
 	}
 }
 
@@ -189,17 +195,19 @@ var cookies_produced_display = document.getElementById("cookies_produced");
 
 var buildings = document.getElementById("buildings");
 
-bakery_enabled = 0;
+grandma_enabled = 0;
+farm_enabled = 0;
 factory_enabled = 0;
-cookie_tesla_enabled = 0;
-cookie_gigant_enabled = 0;
+mine_enabled = 0;
+shipment_enabled = 0;
 
 clicker = new Clicker();
-baker = new Building("Baker", 1, 20);
-baker.set_visible();
-bakery = new Building("Bakery", 10, 200);
-factory = new Building("Factory", 100, 2000);
-cookie_tesla = new Building("Cookie Tesla", 1000, 20000);
-cookie_gigant = new Building("Cookie Gigant", 10000, 200000);
+cursor = new Building("Cursor", 0.1, 15);
+cursor.set_visible();
+grandma = new Building("Grandma", 1, 100);
+farm = new Building("Farm", 8, 1500);
+factory = new Building("Factory", 60, 25000);
+mine = new Building("Mine", 500, 400000);
+shipment = new Building("Shipment", 4000, 5000000);
 
 setInterval(renew_cookies, 500);
