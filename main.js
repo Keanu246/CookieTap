@@ -53,55 +53,6 @@ class Clicker
 	}
 }
 
-class improvedClicker
-{
-	constructor()
-	{
-		this.level = 0
-		this.price = 1000;
-
-		this.level_display = document.getElementById("improvedclicker_level");
-		this.price_display = document.getElementById("improvedclicker_price");
-		this.productivity_display = document.getElementById("improvedclicker_productivity");
-
-		this.renew_display();
-	}
-
-	click()
-	{
-		cookies += this.get_production_value();
-		cookies_produced += this.get_production_value();
-		renew_cookies();
-	}
-
-	get_production_value()
-	{
-		return Math.floor(50 + (0.15 * altogether_productivity * (this.level - 1)) + (this.level - 1));
-	}
-
-	improve()
-	{
-		if(cookies >= this.price)
-		{
-			cookies -= this.price;
-			this.level += 0;
-			this.price *= 1.5;
-			this.renew_display();
-		}
-		else
-		{
-			alert("Not enough cookies!");
-		}
-	}
-
-	renew_display()
-	{
-		this.level_display.innerHTML = this.level;
-		this.price_display.innerHTML = this.price;
-		this.productivity_display.innerHTML = this.get_production_value();
-	}
-}
-
 class Building
 {
 	constructor(name, productivity, price)
