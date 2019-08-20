@@ -53,7 +53,7 @@ class Clicker
 	}
 }
 
-class ImprovedClicker
+class improvedClicker
 {
 	constructor()
 	{
