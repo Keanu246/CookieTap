@@ -1,9 +1,3 @@
-ow!
-
-Short Game Description
-
-You have to produce cookies. You can improve your cookie production by improving the clicker or the buildings. The clicker generates 1 cookie + 5 % of your total production of all buildings. You can unlock new buildings if you have produced enough cookies.
-
 // classes
 // functions
 // commands and global variables
