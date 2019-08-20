@@ -9,7 +9,7 @@ class Clicker
 	constructor()
 	{
 		this.level = 1
-		this.price = 115;
+		this.price = 10;
 
 		this.level_display = document.getElementById("clicker_level");
 		this.price_display = document.getElementById("clicker_price");
@@ -27,7 +27,7 @@ class Clicker
 
 	get_production_value()
 	{
-		return Math.floor(1 + (0.05 * altogether_productivity * (this.level - 1)) + (this.level - 1));
+		return Math.floor(1 + (0.1 * altogether_productivity * (this.level - 1)) + (this.level - 1));
 	}
 
 	improve()
@@ -36,7 +36,7 @@ class Clicker
 		{
 			cookies -= this.price;
 			this.level += 1;
-			this.price *= 1.15;
+			this.price *= 10;
 			this.renew_display();
 		}
 		else
@@ -102,7 +102,7 @@ class Building
 	
 	get_price() 
 	{
-		return (this.price / 1.15) * (this.level * this.level + 1) + (this.price / 1.15) * (this.level + 1)
+		return (this.price / 2) * (this.level * this.level + 1) + (this.price / 2) * (this.level + 1)
 	}
 	
 	improve()
