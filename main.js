@@ -219,7 +219,6 @@ function renew_cookies()
 		cookie_god_enabled = 1;
 	}
 }
-}
 
 // commands and (global) variables
 
@@ -260,3 +259,5 @@ prism = new Building("Prism", 1200000000, 9000000000000);
 cookie_god = new Building("Cookie God", 450000000000, 250000000000000);
 
 setInterval(renew_cookies, 500);
+
+}
