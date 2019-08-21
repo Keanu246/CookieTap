@@ -206,6 +206,19 @@ function renew_cookies()
 		antimatter_condenser.set_visible(); 
 		antimatter_condenser_enabled = 1;
 	}
+	
+	if(this.cookies_produced >= 1200000000 && prism_enabled == 0) 
+	{
+		prism.set_visible(); 
+		prism_enabled = 1;
+	}
+	
+	if(this.cookies_produced >= 450000000000 && cookie_god_enabled == 0) 
+	{
+		cookie_god.set_visible(); 
+		cookie_god_enabled = 1;
+	}
+}
 }
 
 // commands and (global) variables
@@ -228,6 +241,8 @@ alchemy_lab_enabled = 0;
 portal_enabled = 0;
 time_machine_enabled = 0;
 antimatter_condenser_enabled = 0;
+prism_enabled = 0;
+cookie_god_enabled = 0;
 
 clicker = new Clicker();
 cursor = new Building("Cursor", 1, 15);
@@ -241,5 +256,7 @@ alchemy_lab = new Building("Alchemy Lab", 800000, 75000000);
 portal = new Building("Portal", 16000000, 1000000000);
 time_machine = new Building("Time Machine", 480000000, 30000000000);
 antimatter_condenser = new Building("Antimatter Condenser", 7200000000, 500000000000);
+prism = new Building("Prism", 1200000000, 9000000000000);
+cookie_god = new Building("Cookie God", 450000000000, 250000000000000);
 
 setInterval(renew_cookies, 500);
